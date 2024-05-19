@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PocketClinic.Views.ChatPage"
+             BackgroundColor="#f0f0f0">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ChatListView"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Text}"
+                                       BackgroundColor="#007bff"
+                                       TextColor="White"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Start"
+                                       Padding="10">
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Entry Placeholder="Введите сообщение..."
+                   x:Name="MessageEntry"
+                   Completed="OnMessageEntryCompleted"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
